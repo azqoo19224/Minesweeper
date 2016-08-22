@@ -56,20 +56,22 @@ for ($i = 0; $i <10; $i++) {
     for ($j = 0; $j <10; $j++) {
         echo $bomb[$i][$j];    
     }
-    
-    echo "N";
-}
-
-echo "<br>";
-//印出陣列
-echo "<table style='text-align:center; font-size:36px;'>";
-for ($i = 0; $i <10; $i++) {
-    echo "<tr>";
-    for ($j = 0; $j <10; $j++) {
-        echo "<td>".$bomb[$i][$j]."</td>";
+    if($i != 9){
+        echo "N";
     }
-    
-    echo "<td>N</td></tr>";
+        
 }
 
-echo "</table>";
+// echo "<br>";
+// //印出陣列
+// echo "<table style='text-align:center; font-size:36px;'>";
+// for ($i = 0; $i <10; $i++) {
+//     echo "<tr>";
+//     for ($j = 0; $j <10; $j++) {
+//         echo "<td>".$bomb[$i][$j]."</td>";
+//     }
+    
+//     echo "<td>N</td></tr>";
+// }
+
+// echo "</table>";
