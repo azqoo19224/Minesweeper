@@ -1,6 +1,4 @@
 <?php
-    
-echo "<div style='text-align:center; font-size:36px;'>";
 $n = 0;
 $bomb = array();
 //陣列塞0
@@ -56,18 +54,22 @@ for ($i = 0; $i <10; $i++) {
 //印出字串
 for ($i = 0; $i <10; $i++) {
     for ($j = 0; $j <10; $j++) {
-        echo $bomb[$i][$j]."       ";
-    }
-    
-    echo "N<br>";
-}
-
-echo "</div>";
-//印出字串
-for ($i = 0; $i <10; $i++) {
-    for ($j = 0; $j <10; $j++) {
         echo $bomb[$i][$j];    
     }
     
     echo "N";
 }
+
+echo "<br>";
+//印出陣列
+echo "<table style='text-align:center; font-size:36px;'>";
+for ($i = 0; $i <10; $i++) {
+    echo "<tr>";
+    for ($j = 0; $j <10; $j++) {
+        echo "<td>".$bomb[$i][$j]."</td>";
+    }
+    
+    echo "<td>N</td></tr>";
+}
+
+echo "</table>";
