@@ -63,17 +63,17 @@ if (isset($_GET["map"])) {
 }
     
     if ($num != 40) {
-        echo "炸彈數有錯";
+        echo "不符合，因為炸彈數有錯";
         exit;
     }
     
     if ($bombStr != $_GET["map"]) {
-        echo "答案有錯";
+        echo "不符合，因為答案有錯";
         exit;
     }
 
     if (count($bombStr) != count($_GET["map"])) {
-        echo "長度有誤";
+        echo "不符合，因為長度有誤";
     } else {
         echo "符合";
     }
