@@ -4,7 +4,7 @@ $str = $_GET['map'];
 $minesweeper->fund($str);
 
 class Minesweeper {
-//宣告陣列長度.炸彈大小
+//宣告陣列長度.炸彈大小.結果
 private $result = "不符合,";
 private $row = 10;
 private $column = 10;
@@ -35,7 +35,7 @@ function fund($str){
               $this->bomb[$i][$j] = "0";   
             }
     }
-        //計算炸彈數
+
         $this->num = 0;
         $this->setbomb();
         $bombStr = $this->fundBombStr();
@@ -46,8 +46,8 @@ function fund($str){
         $this->verificationEqual($bombStr, $str);
     }
 }
-    //設置炸彈
-    function setbomb(){
+    //設置預備炸彈並設值
+    function setbomb() {
         for ($i = 0; $i < $this->row; $i++) {
             for ($j = 0; $j < $this->column; $j++) {
                 if ($this->arr[$i][$j] == "M") {
@@ -82,7 +82,7 @@ function fund($str){
             }
         }
     }
-    
+    //找出陣列
     function fundBombStr() {
         for ($i = 0; $i < $this->row; $i++) {
             for ($j = 0; $j < $this->column; $j++) {
@@ -97,17 +97,16 @@ function fund($str){
         return $bombStr;
     }
     //長度驗證
-    function strCount($bombStr, $str){
+    function strCount($bombStr, $str) {
         if (count(str_split($bombStr)) != count(str_split($str))) {
-        $this->result .= "應該長度為" . count(str_split($bombStr)) . "//現有長度為" . count(str_split($str)) . "/n";
-       
-    }
+            $this->result .= "應該長度為" . count(str_split($bombStr)) . "//現有長度為" . count(str_split($str)) . "/n";
+        }
     }
     //驗證N個數及位置是否正確
     function verificationN($a) {
         if (count($a) != $this->row) {
             $this->result .= "因為N的數目有錯/n";
-    }
+        }
       //判斷N的位置
         for ($i = 0 ;$i < count($a) ;$i++) {
             if (count($this->arr[$i]) != 10) { 
@@ -124,7 +123,7 @@ function fund($str){
         }
     }
     //答案驗證
-    function verificationError($bombStr, $str){
+    function verificationError($bombStr, $str) {
         if ($bombStr != $str) {
             $b = str_split($bombStr);
             $gg = str_split($str);
@@ -137,7 +136,7 @@ function fund($str){
             }
         }
     }
-    //最後驗證
+    //最後驗證&&印出結果
     function verificationEqual($bombStr, $str) {
         if (str_split($bombStr) == str_split($str) && $bombStr != $str) {
         echo "符合";
