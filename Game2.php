@@ -1,5 +1,5 @@
 <?php
-// $iTinel = microtime(true);
+
 $n = 0;
 $row = 50;
 $column = 60;
@@ -67,20 +67,3 @@ for ($i = 0; $i < $row; $i++) {
         
 }
 
-// echo "<br>";
-// //印出陣列
-// echo "<table style='text-align:center; font-size:36px;'>";
-// for ($i = 0; $i < $row; $i++) {
-//     echo "<tr>";
-//     for ($j = 0; $j < $column; $j++) {
-//         echo "<td>".$bomb[$i][$j]."</td>";
-//     }
-//     if ($i != ($row - 1)) {
-//         echo "<td>N</td></tr>";
-//     }
-// }
-
-// $iTine2 = microtime(true);
-// // echo "</table>";
-// echo "<br>";
-// echo $iTine2 - $iTinel;
